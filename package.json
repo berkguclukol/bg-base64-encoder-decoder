@@ -2,7 +2,7 @@
   "name": "bg-base64-encoder-decoder",
   "version": "1.0.0",
   "description": "It performs base64 encode and decode on the given string.",
-  "main": "main.js",
+  "main": "public/main.js",
   "scripts": {
     "start": "electron .",
     "dist": "electron-builder",

@@ -9,8 +9,8 @@ const createWindow = () => {
 		frame: false,
 		alwaysOnTop: true,
 	});
-	splash.setIcon(path.join(__dirname, "icon.png"));
-	splash.loadFile(path.join(__dirname, "public/splash.html"));
+	splash.setIcon(path.join(__dirname, "assets/icon.png"));
+	splash.loadFile(path.join(__dirname, "splash.html"));
 	splash.center();
 	const win = new BrowserWindow({
 		width: 860,
@@ -23,11 +23,11 @@ const createWindow = () => {
 		webPreferences: {
 			nodeIntegration: true,
 			contextIsolation: false,
-			preload: path.join(__dirname, "preload.js"),
+			preload: path.join(__dirname, "public/preload.js"),
 		},
 	});
-	win.setIcon(path.join(__dirname, "icon.png"));
-	win.loadFile(path.join(__dirname, "public/index.html"));
+	win.setIcon(path.join(__dirname, "assets/icon.png"));
+	win.loadFile(path.join(__dirname, "index.html"));
 	setTimeout(function () {
 		splash.close();
 		win.show();
