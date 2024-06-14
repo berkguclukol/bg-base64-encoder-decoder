@@ -15,8 +15,14 @@ cd bg-base64-encoder-decoder
 npm install
 npm start
 ```
+### For tailwind watch, run this command.
+All tailwind settings in package.json and tailwind.config.js
+```sh
+npm run watch
+```
 
-For create a package (all electron-builder settings in package.json.)
+### For create a package
+All electron-builder settings in package.json.
 
 ```sh
 npm run dist
