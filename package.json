@@ -1,0 +1,44 @@
+{
+  "name": "bg-base64-encoder-decoder",
+  "version": "1.0.0",
+  "description": "It performs base64 encode and decode on the given string.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder",
+    "watch": "npx tailwindcss -i ./public/vendor/tailwindcss/tailwind.base.css -o ./public/vendor/tailwindcss/tailwind.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/berkguclukol/bg-base64-encoder-decoder.git"
+  },
+  "author": "Berk Guclukol",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^30.0.8",
+    "electron-builder": "^24.13.3",
+    "tailwindcss": "^3.4.4"
+  },
+  "bugs": {
+    "url": "https://github.com/berkguclukol/bg-base64-encoder-decoder/issues"
+  },
+  "homepage": "https://github.com/berkguclukol/bg-base64-encoder-decoder#readme",
+  "build": {
+    "productName": "BG Base64 Encoder/Decoder",
+    "win": {
+      "icon": "public/assets/icon.ico",
+      "target": [
+        {
+          "target": "portable"
+        },
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
+    }
+  }
+}
