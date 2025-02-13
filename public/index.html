@@ -1,64 +1,42 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark" class="d-flex">
+<html lang="en" class="flex h-dvh">
 <head>
 	<meta charset="UTF-8"/>
 	<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"/>
 	<meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
-	<title>BG Base64 Encoder/Decoder v1.0</title>
+	<title>BG Base64 Encoder / Decoder</title>
 	<link rel="stylesheet" href="vendor/tailwindcss/tailwind.css">
 </head>
-<body class="overflow-hidden bg-slate-950">
-<header class="fixed top-0 left-0 right-0 h-16 px-4 flex items-center justify-between ">
-	<div class="flex items-center gap-2 text-slate-200">
-		<img src="assets/icon.png" class="h-7" alt="" />
-		<h6 class="text-sm font-normal">BG Base64 Encoder / Decoder v1.0</h6>
+<body class="bg-slate-200">
+<main class="fixed top-0 right-0 bottom-0 left-0 flex flex-col">
+	<div class="pt-5 pl-5 pr-5 flex-1 flex flex-col">
+		<label for="inputString" class="block mb-2 text-sm font-medium text-gray-900">String to be converted</label>
+		<textarea spellcheck="false" id="inputString" rows="4" class="flex-1 resize-none block p-2.5 w-full text-sm text-gray-900 outline-0 bg-gray-50 rounded-lg border-2 border-gray-300 focus:ring-red-500 focus:border-red-500 focus:border-2" placeholder="Write your string here..."></textarea>
 	</div>
-	<div class="header-buttons flex gap-1">
-		<button id="minimizeBtn" title="Minimize" class="bg-green-500 text-green-950 w-6 h-6 flex items-center justify-center rounded-full">
-			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
-				<path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
-			</svg>
-		</button>
-		<button id="maximizeBtn" class="bg-amber-500 text-amber-950 w-6 h-6 flex items-center justify-center rounded-full">
-			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
-				<path stroke-linecap="round" stroke-linejoin="round" d="M16.5 8.25V6a2.25 2.25 0 0 0-2.25-2.25H6A2.25 2.25 0 0 0 3.75 6v8.25A2.25 2.25 0 0 0 6 16.5h2.25m8.25-8.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-7.5A2.25 2.25 0 0 1 8.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 0 0-2.25 2.25v6" />
-			</svg>
-		</button>
-		<button id="quitBtn" title="Exit" class="bg-red-600 text-red-950 w-6 h-6 flex items-center justify-center rounded-full">
-			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
-				<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-			</svg>
-		</button>
-	</div>
-</header>
-<main class="fixed top-16 left-0 right-0 bottom-0 text-slate-200 flex flex-col justify-between rounded-md">
-	<div class="px-4 grid grid-cols-2 gap-4 items-stretch flex-1">
-		<div class="flex flex-1 flex-col items-stretch">
-			<label for="sourceString" class="block mb-2 text-sm text-white font-normal">Source String</label>
-			<textarea spellcheck="false" id="sourceString" class="flex-1 p-2.5 w-full text-sm text-slate-200 bg-slate-900 rounded-lg border border-slate-800 focus:outline-none" placeholder="Source string write here..."></textarea>
-		</div>
-		<div class="flex flex-1 flex-col items-stretch">
-			<label for="destinationString" class="block mb-2 text-sm text-white font-normal">Destination String</label>
-			<textarea spellcheck="false" id="destinationString" class="flex-1 p-2.5 w-full text-sm text-slate-200 bg-slate-900 rounded-lg border border-slate-800 focus:outline-none" placeholder="Target string will be here..." readonly></textarea>
-		</div>
-	</div>
-	<div class="p-4 grid grid-cols-2 gap-4 items-center">
-		<button id="EncodeButton" title="Encode String!" class="px-4 py-2 text-sm hover:bg-blue-800 bg-blue-700 text-slate-100 rounded-full flex items-center justify-center gap-2">
-			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-				<path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+	<div class="p-5 grid grid-cols-2 gap-4 items-center">
+		<button id="EncodeButton" title="Encode String!" class="px-4 py-2 text-sm hover:bg-red-800 bg-red-700 text-slate-100 rounded-lg flex items-center justify-center gap-2">
+			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+				<path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
 			</svg>
 			Encode String
+			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+				<path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+			</svg>
 		</button>
-		<button id="DecodeButton" title="Decode String!" class="px-4 py-2 text-sm hover:bg-blue-800 bg-blue-700 text-slate-100 rounded-full flex items-center justify-center gap-2">
-			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-				<path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+		<button id="DecodeButton" title="Decode String!" class="px-4 py-2 text-sm hover:bg-red-800 bg-red-700 text-slate-100 rounded-lg flex items-center justify-center gap-2">
+			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+				<path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
 			</svg>
 			Decode String
+			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+				<path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+			</svg>
 		</button>
 	</div>
 </main>
 
-<script src="script/appFunction.js"></script>
+
+
 <script type="text/javascript" src="script/app.js"></script>
 </body>
 </html>

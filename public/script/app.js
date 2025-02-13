@@ -1,13 +1,14 @@
 const EncodeButtonEl = document.getElementById("EncodeButton");
 const DecodeButtonEl = document.getElementById("DecodeButton");
-const sourceStringEl = document.getElementById("sourceString");
-const destinationStringEl = document.getElementById("destinationString");
+const inputStringEl = document.getElementById("inputString");
 
 EncodeButtonEl.addEventListener("click", (e) => {
-  destinationStringEl.value = btoa(sourceStringEl.value);
+  let inputStringValue = inputStringEl.value.trim();
+  inputStringEl.value = btoa(inputStringValue);
 })
 
 DecodeButtonEl.addEventListener("click", (e) => {
-  destinationStringEl.value = atob(sourceStringEl.value);
+  let inputStringValue = inputStringEl.value.trim();
+  inputStringEl.value = atob(inputStringValue);
 })
 
